@@ -9,16 +9,21 @@ https://www.wayos.com/product/jiatingzuwang/jiayongwuxian/jiatingwifituijian/218
 Command injection vulnerability:
 
 Command injection exists in the sub_4901E0 function. On line 23, httpd_get_parm sets the flag value of parameter a1 to parm；
-![[Pasted image 20240806145004.png]]
+
+
+![Pasted image 20240806145004](https://github.com/user-attachments/assets/3bc5aaec-00a2-45f0-ae67-cea038fb8213)
+
 In line 45, the value off_755C3C is "cmd"; 
 When the parameter is passed in, just carry "cmd" and it will be executed to line 68；
 Then the sprintf function is concatenated to v21, and the value of v21 is executed as the parameter of system, resulting in command injection；
-![[Pasted image 20240806145155.png]]
 
-Here is the FirmAE simulated firmware command injection process:
+![Pasted image 20240806145155](https://github.com/user-attachments/assets/b5841f87-f4ff-41ca-82c9-392bc42f26db)
 
-![[0ac763777c802f91b1ccc3700d1e5ce.png]]
-![[Pasted image 20240806150808.png]]
+Here is the FirmAE simulated firmware command injection process
+
+![Pasted image 20240806150053 png](https://github.com/user-attachments/assets/aefd1f13-43c4-4cc7-ab95-82b5e60376bb)
+
+![Pasted image 20240806150808](https://github.com/user-attachments/assets/e64abede-a24d-409c-a8b1-6ff78354f72f)
 
 poc：
 
