@@ -7,6 +7,7 @@ Download address:
 http://www.dlink.com.cn/techsupport/ProductInfo.aspx?m=DI-8200
 
 buffer overflow:
+
 dbsrv_asp function has a buffer overflow；v32 length 1200，a1 is the passed parameter，v3 is the value of str，The length is not judged when the strcpy function is executed，This results in an overflow；
 
 ![Pasted image 20240808182053](https://github.com/user-attachments/assets/1f359793-53cc-4cae-898c-2bb942af260b)
